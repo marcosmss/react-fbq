@@ -1,0 +1,54 @@
+import Snippets from "./snippets";
+// import types from "../types/index"
+
+let snippets = {};
+
+const PixelCode = {
+  pixelCode(args) {
+    snippets = Snippets.tags(args);
+
+    const script = (s) => {
+      const script = document.createElement("script");
+      script.innerHTML = s || snippets.script;
+      return script;
+    };
+
+    const noScript = () => {
+      const noscript = document.createElement("noscript");
+      noscript.innerHTML = snippets.noscript;
+      return noscript;
+    };
+
+    return { script, noScript };
+  },
+
+  initialize({ id, advancedMatching }) {
+    const pixelCode = this.pixelCode({ id, advancedMatching });
+
+    document.head.insertBefore(pixelCode.script(), document.head.childNodes[0]);
+    document.head.insertBefore(
+      pixelCode.noScript(),
+      document.head.childNodes[0]
+    );
+  },
+
+  pageView() {
+    const pixelCode = this.pixelCode({});
+
+    document.head.insertBefore(
+      pixelCode.script(snippets.pageView),
+      document.head.childNodes[0]
+    );
+  },
+
+  track({ title, data }) {
+    const pixelCode = this.pixelCode({ title, data });
+
+    document.head.insertBefore(
+      pixelCode.script(snippets.track),
+      document.head.childNodes[0]
+    );
+  },
+};
+
+export default PixelCode;
