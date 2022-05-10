@@ -1,13 +1,18 @@
 {
   "name": "react-fbq",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Package to add React Pixel Code in your project",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["react pixel code", "facebook pixel code", "react", "fbq"],
+  "keywords": [
+    "react pixel code",
+    "facebook pixel code",
+    "react",
+    "fbq"
+  ],
   "author": "marcosmss",
   "license": "ISC",
   "repository": {
