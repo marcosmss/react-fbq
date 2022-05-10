@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["React Pixel Code", "Facebook Pixel Code", "React Pixel Code", "ReactJs"],
+  "keywords": ["react pixel code", "facebook pixel code", "react", "fbq"],
   "author": "marcosmss",
   "license": "ISC",
   "repository": {
