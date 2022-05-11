@@ -1,6 +1,6 @@
 {
   "name": "react-fbq",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Package to add React Pixel Code in your project",
   "main": "src/index.js",
   "scripts": {
