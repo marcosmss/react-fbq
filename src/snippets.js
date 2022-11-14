@@ -30,7 +30,7 @@ const Snippets = {
 
     const pageView = `fbq("track", "PageView");`;
 
-    const track = `"track", ${title}, ${JSON.stringify(data)}`
+    const track = `fbq("track", ${title}, ${JSON.stringify(data)});`
 
     return {
       script,
