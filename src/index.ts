@@ -1,10 +1,10 @@
 import Snippets from "./snippets";
-// import types from "../types/index"
+import types from "../types/index";
 
-let snippets = {};
+let snippets: types.TagFunction = {};
 
 const PixelCode = {
-  pixelCode(args) {
+  pixelCode(args: types.TagsSnippetsProps) {
     snippets = Snippets.tags(args);
 
     const script = (s) => {
@@ -22,7 +22,7 @@ const PixelCode = {
     return { script, noScript };
   },
 
-  initialize({ id, advancedMatching }) {
+  initialize({ id, advancedMatching }: types.InitializeProps) {
     const pixelCode = this.pixelCode({ id, advancedMatching });
 
     document.head.insertBefore(pixelCode.script(), document.head.childNodes[0]);
@@ -41,7 +41,7 @@ const PixelCode = {
     );
   },
 
-  track({ title, data }) {
+  track({ title, data }: types.TrackProps) {
     const pixelCode = this.pixelCode({ title, data });
 
     document.head.insertBefore(

@@ -1,5 +1,12 @@
-const Snippets = {
-  tags: function ({ id, advancedMatching, title, data }) {
+import types from "../types/index";
+
+const Snippets: any = {
+  tags: function ({
+    id,
+    advancedMatching,
+    title,
+    data,
+  }: types.TagsSnippetsProps) {
     const script = `!(function(f, b, e, v, n, t, s) {
         if (f.fbq) return;
         n = f.fbq = function() {
@@ -30,7 +37,7 @@ const Snippets = {
 
     const pageView = `fbq("track", "PageView");`;
 
-    const track = `fbq("track", "${title}", ${JSON.stringify(data)});`
+    const track = `fbq("track", "${title}", ${JSON.stringify(data)});`;
 
     return {
       script,
@@ -41,4 +48,4 @@ const Snippets = {
   },
 };
 
-module.exports = Snippets;
+export default Snippets;

@@ -1,8 +1,9 @@
 {
   "name": "react-fbq",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Package to add React Pixel Code in your project",
   "main": "src/index.js",
+  "types": "./types/index.d.ts",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,11 +26,14 @@
     "@babel/plugin-syntax-jsx": "^7.16.7",
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.16.7",
-    "@types/node": "^17.0.31",
+    "@babel/preset-typescript": "^7.21.4",
+    "@types/node": "^18.15.11",
     "babel-loader": "^8.2.5",
     "html-webpack-plugin": "^5.5.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0"
