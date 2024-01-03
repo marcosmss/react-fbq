@@ -30,6 +30,7 @@ export interface TagsSnippetsProps {
 export interface InitializeProps {
   id: string;
   advancedMatching?: AdvancedMatching;
+  args?: any[];
 }
 
 export interface TrackProps {

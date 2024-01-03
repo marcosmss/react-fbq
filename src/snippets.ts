@@ -30,7 +30,7 @@ const Snippets: any = {
         document,
         "script",
         "https://connect.facebook.net/en_US/fbevents.js"
-      );
+      ); ${args ? `fbq(${args.map(arg => JSON.stringify(arg)).join(',')});` : ""}
       fbq("init", "${id}" ${advancedMatching ? `,${advancedMatching}` : ""});`;
 
     const noscript = `<img height="1" width="1" style="display:none"

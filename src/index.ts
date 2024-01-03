@@ -7,7 +7,7 @@ const PixelCode = {
   pixelCode(args: types.TagsSnippetsProps) {
     snippets = Snippets.tags(args);
 
-    const script = (s) => {
+    const script = (s?: any) => {
       const script = document.createElement("script");
       script.innerHTML = s || snippets.script;
       return script;
@@ -22,8 +22,8 @@ const PixelCode = {
     return { script, noScript };
   },
 
-  initialize({ id, advancedMatching }: types.InitializeProps) {
-    const pixelCode = this.pixelCode({ id, advancedMatching });
+  initialize({ id, advancedMatching, args }: types.InitializeProps) {
+    const pixelCode = this.pixelCode({ id, advancedMatching, args });
 
     document.head.insertBefore(pixelCode.script(), document.head.childNodes[0]);
     document.head.insertBefore(

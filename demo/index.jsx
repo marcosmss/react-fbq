@@ -2,10 +2,9 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import ReactFbq from '../src/index';
 
-ReactFbq.initialize({id: 'pixel_code_id'});
+ReactFbq.initialize({id: 'pixel_code_id', args: ['dataProcessingOptions', ['LDU'], 0, 0]});
 ReactFbq.pageView();
 ReactFbq.track({title: 'title', data: 'data' });
-ReactFbq.fbq('dataProcessingOptions', ['LDU'], 0, 0);
 
 const container = document.getElementById('app');
 const root = createRoot(container);
