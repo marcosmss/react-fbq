@@ -35,6 +35,14 @@ var PixelCode = {
         var pixelCode = this.pixelCode({ title: title, data: data });
         document.head.insertBefore(pixelCode.script(snippets.track), document.head.childNodes[0]);
     },
+    fbq: function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var pixelCode = this.pixelCode({ args: args });
+        document.head.insertBefore(pixelCode.script(snippets.fbq), document.head.childNodes[0]);
+    }
 };
 exports.default = PixelCode;
 //# sourceMappingURL=index.js.map

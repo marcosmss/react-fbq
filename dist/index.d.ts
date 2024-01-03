@@ -7,5 +7,6 @@ declare const PixelCode: {
     initialize({ id, advancedMatching }: types.InitializeProps): void;
     pageView(): void;
     track({ title, data }: types.TrackProps): void;
+    fbq(...args: any[]): void;
 };
 export default PixelCode;

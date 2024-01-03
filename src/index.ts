@@ -49,6 +49,15 @@ const PixelCode = {
       document.head.childNodes[0]
     );
   },
+
+  fbq(...args: any[]) {
+    const pixelCode = this.pixelCode({args: args});
+
+    document.head.insertBefore(
+      pixelCode.script(snippets.fbq),
+      document.head.childNodes[0]
+    );
+  }
 };
 
 export default PixelCode;

@@ -6,6 +6,7 @@ const Snippets: any = {
     advancedMatching,
     title,
     data,
+    args,
   }: types.TagsSnippetsProps) {
     const script = `!(function(f, b, e, v, n, t, s) {
         if (f.fbq) return;
@@ -39,11 +40,15 @@ const Snippets: any = {
 
     const track = `fbq("track", "${title}", ${JSON.stringify(data)});`;
 
+    const argsString = args ? args.map(arg => JSON.stringify(arg)).join(',') : '';
+    const fbq = `fbq(${argsString});`;
+
     return {
       script,
       noscript,
       pageView,
       track,
+      fbq,
     };
   },
 };
