@@ -21,8 +21,8 @@ var PixelCode = {
         return { script: script, noScript: noScript };
     },
     initialize: function (_a) {
-        var id = _a.id, advancedMatching = _a.advancedMatching;
-        var pixelCode = this.pixelCode({ id: id, advancedMatching: advancedMatching });
+        var id = _a.id, advancedMatching = _a.advancedMatching, args = _a.args;
+        var pixelCode = this.pixelCode({ id: id, advancedMatching: advancedMatching, args: args });
         document.head.insertBefore(pixelCode.script(), document.head.childNodes[0]);
         document.head.insertBefore(pixelCode.noScript(), document.head.childNodes[0]);
     },
