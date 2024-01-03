@@ -6,6 +6,7 @@ const Snippets: any = {
     advancedMatching,
     title,
     data,
+    args,
   }: types.TagsSnippetsProps) {
     const script = `!(function(f, b, e, v, n, t, s) {
         if (f.fbq) return;
@@ -29,7 +30,7 @@ const Snippets: any = {
         document,
         "script",
         "https://connect.facebook.net/en_US/fbevents.js"
-      );
+      ); ${args ? `fbq(${args.map(arg => JSON.stringify(arg)).join(',')});` : ""}
       fbq("init", "${id}" ${advancedMatching ? `,${advancedMatching}` : ""});`;
 
     const noscript = `<img height="1" width="1" style="display:none"
@@ -39,11 +40,15 @@ const Snippets: any = {
 
     const track = `fbq("track", "${title}", ${JSON.stringify(data)});`;
 
+    const argsString = args ? args.map(arg => JSON.stringify(arg)).join(',') : '';
+    const fbq = `fbq(${argsString});`;
+
     return {
       script,
       noscript,
       pageView,
       track,
+      fbq,
     };
   },
 };

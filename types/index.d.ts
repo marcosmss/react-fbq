@@ -16,18 +16,21 @@ export interface TagFunction {
   noscript?: string;
   pageView?: string;
   track?: string;
+  fbq?: string;
 }
 
 export interface TagsSnippetsProps {
-  id: string;
+  id?: string;
   advancedMatching?: AdvancedMatching;
-  title: string;
-  data: object;
+  title?: string;
+  data?: object;
+  args?: any[];
 }
 
 export interface InitializeProps {
   id: string;
   advancedMatching?: AdvancedMatching;
+  args?: any[];
 }
 
 export interface TrackProps {

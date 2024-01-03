@@ -21,8 +21,8 @@ var PixelCode = {
         return { script: script, noScript: noScript };
     },
     initialize: function (_a) {
-        var id = _a.id, advancedMatching = _a.advancedMatching;
-        var pixelCode = this.pixelCode({ id: id, advancedMatching: advancedMatching });
+        var id = _a.id, advancedMatching = _a.advancedMatching, args = _a.args;
+        var pixelCode = this.pixelCode({ id: id, advancedMatching: advancedMatching, args: args });
         document.head.insertBefore(pixelCode.script(), document.head.childNodes[0]);
         document.head.insertBefore(pixelCode.noScript(), document.head.childNodes[0]);
     },
@@ -35,6 +35,14 @@ var PixelCode = {
         var pixelCode = this.pixelCode({ title: title, data: data });
         document.head.insertBefore(pixelCode.script(snippets.track), document.head.childNodes[0]);
     },
+    fbq: function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var pixelCode = this.pixelCode({ args: args });
+        document.head.insertBefore(pixelCode.script(snippets.fbq), document.head.childNodes[0]);
+    }
 };
 exports.default = PixelCode;
 //# sourceMappingURL=index.js.map
