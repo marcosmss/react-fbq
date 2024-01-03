@@ -5,6 +5,7 @@ import ReactFbq from '../src/index';
 ReactFbq.initialize({id: 'pixel_code_id', args: ['dataProcessingOptions', ['LDU'], 0, 0]});
 ReactFbq.pageView();
 ReactFbq.track({title: 'title', data: 'data' });
+ReactFbq.fbq('track', 'ViewContent', {content_name: 'Car', content_category: 'Auto'});
 
 const container = document.getElementById('app');
 const root = createRoot(container);
